@@ -1,0 +1,78 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+
+</head>
+
+<body>
+<form>
+
+ <div class="panel-heading">
+                                        <h2 class="panel-title"><strong>CALCULATOR</strong></h2>
+                                    </div>
+                                    <br/><br/>
+                                    <div class="form-group">
+                                        <div class="col-md-1"></div>
+                                        <label class="col-md-3 control-label"><b>Total </b>  </label>
+                                      
+                                        <div class="col-md-6">
+                                            <input type="text" id="two" placeholder="Amount in TK  " class="form-control" >
+                                        </div>
+
+                                    </div><br/>
+                                    <div class="form-group">
+                                     
+                                        <label class="col-md-3 control-label"><b>Discount (%) </b> </label>
+                                      
+                                        <div class="col-md-6">
+                                            <input type="text" id="three"  class="form-control" >
+                                        </div>
+
+                                    </div><br/>
+
+                                    <div class="form-group">
+                                       
+                                        <label class="col-md-3 control-label"><b>Net Total </b> </label>
+                                     
+                                        <div class="col-md-6">
+                                            <input type="text" id="four"  class="form-control" >
+                                        </div>
+
+                                    </div><br/>
+
+</form>
+  
+<script>
+
+$(document).ready(function(){
+
+
+    var $src = $('#two');
+
+    var $ds = $('#three');
+            $dst = $('#four');
+    //$dst1 = $('#five');
+   // $dst2 = $('#six');
+
+
+
+    $src.on('input', function () {
+
+        $dst.val($src.val());
+
+        // $dst2.val($dst.val());
+    });
+        $ds.on('input', function () {
+
+            $dst.val($src.val() - (($src.val() * $ds.val()) / 100));
+
+           //  $dst2.val($dst.val());
+        });
+		});
+
+</script>
+
+</body>
+</html>
